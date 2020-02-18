@@ -4,7 +4,7 @@ import numpy as np
 root = './'
 
 all_ds  = []
-for env in os.listdir(root):
+for env in ['residential', 'city', 'road']:
 
     if not os.path.isdir(env):continue
 
@@ -27,3 +27,7 @@ for env in os.listdir(root):
         path_out = os.path.join(root, env, recording, 'processed.npz')
 
         print('saved %s' % path_out)
+
+
+# delete the split files
+os.system('rm -rf */*/processed_*')
