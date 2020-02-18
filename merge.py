@@ -32,3 +32,6 @@ os.system('rm -rf */*/processed_*')
 
 # remove github traces
 os.system('rm -rf .git')
+
+# self removal
+os.sytem('rm merge.py')
