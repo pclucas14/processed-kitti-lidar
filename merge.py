@@ -34,4 +34,4 @@ os.system('rm -rf */*/processed_*')
 os.system('rm -rf .git')
 
 # self removal
-os.sytem('rm merge.py')
+os.system('rm merge.py')
