@@ -6,8 +6,6 @@ root = './'
 all_ds  = []
 for env in ['residential', 'city', 'road']:
 
-    if not os.path.isdir(env):continue
-
     for recording in os.listdir(os.path.join(root, env)):
 
         all_chunks = os.listdir(os.path.join(root, env, recording))
@@ -25,9 +23,9 @@ for env in ['residential', 'city', 'road']:
 
         all_ = {str(i):all_array[i] for i in range(len(all_array))}
         path_out = os.path.join(root, env, recording, 'processed.npz')
+        np.savez_compressed(path_out, **all_)
 
         print('saved %s' % path_out)
-
 
 # delete the split files
 os.system('rm -rf */*/processed_*')
