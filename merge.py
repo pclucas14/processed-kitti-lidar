@@ -29,3 +29,6 @@ for env in ['residential', 'city', 'road']:
 
 # delete the split files
 os.system('rm -rf */*/processed_*')
+
+# remove github traces
+os.system('rm -rf .git')
