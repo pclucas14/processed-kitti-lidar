@@ -1,5 +1,7 @@
 # processed-kitti-lidar
 
+## Description
+
 This repository contains the lidar scans from the [Kitti Dataset](http://www.cvlibs.net/datasets/kitti). <br>
 The dataset is presented in cylindrical coordinates as described in [(Caccia et al.)](https://arxiv.org/abs/1812.01180) <br>
 
@@ -7,3 +9,10 @@ Specifically, each scan has shape `(2, 40, 512)` where the first two channels ar
 `40` is the number of full 360° scans (I cut it down from I think 61 iirc) and `512` is the number of points per scan. 
 
 `NOTE:` about <1% of the scans are missing because the preprocessing failed on those. Use this dataset at your own risk
+
+## Build dataset
+run 
+```
+python merge.py
+```
+This will merge back files which were chunked into smaller pieces that respect Github's maximum file limit. It will also delete any trace of `.git` so you really end up with the dataset and only the dataset
